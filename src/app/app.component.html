@@ -18,13 +18,14 @@
 
   <br>
 
-  <button mat-raised-button (click)="showAnswer()">Answer Me</button>
+  <button mat-raised-button (click)="getProducts()">Get links</button>
   <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner> 
 </mat-card>
 
 <mat-card *ngIf="answerDisplay">
   <h1>{{answerDisplay}}</h1>
 </mat-card>
+
 
 
 
