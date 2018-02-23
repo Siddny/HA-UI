@@ -15,17 +15,33 @@
   <mat-form-field>
     <input matInput [(ngModel)]="answer" placeholder="Username or Email">
   </mat-form-field>
+<br>
 
+<!-- <form "> -->
+  <mat-form-field>
+    <input matInput [(ngModel)]="name" placeholder="Username">
+  </mat-form-field>
+  <!-- <button mat-raised-button type="submit" (ngSubmit)="addStatusList()">Push Name</button>   -->
+<!-- </form> -->
   <br>
-
   <button mat-raised-button (click)="getProducts()">Get links</button>
   <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner> 
 </mat-card>
 
-<mat-card *ngIf="answerDisplay">
-  <h1>{{answerDisplay}}</h1>
-</mat-card>
+<ul>
+  <li *ngFor="let year of response">{{year.name}} {{year.start | date:'d MMMM y'}} {{year.end}}
+    <button (click)="remHospital()">Delete</button>
+  </li>
+</ul>
+
+<!-- <ul>
+    <li *ngFor="let food of foods">{{food.name}}</li>
+</ul> -->
 
 
-
-
+  <form (ngSubmit)="addHospital()">
+    <mat-form-field>
+      <input matInput name="first_name" [(ngModel)]="new_hospital.name" placeholder="First Name">
+    </mat-form-field>
+    <button type="submit">submit</button>
+  </form>
